@@ -1,5 +1,5 @@
 ﻿<Project>
   <PropertyGroup>
-    <OutputPath>$(AppData)\OuterWildsModManager\OWML\Mods\JohnCorby.ArkoseSurprise</OutputPath>
+    <OutputPath>$(AppData)\OuterWildsModManager\OWML\Mods\MegaPiggy.ArkoseSurprise</OutputPath>
   </PropertyGroup>
 </Project>
