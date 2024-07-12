@@ -21,14 +21,9 @@ public class ArkoseSurprise : ModBehaviour
 		Instance.ModHelper.Console.WriteLine("arkose hook");
 		var shape = __instance._rockCollider.gameObject.AddComponent<BoxShape>();
 		shape.CopySettingsFromCollider();
-		shape.OnCollisionEnter += otherShape =>
-		{
-			Instance.ModHelper.Console.WriteLine($"hit {otherShape}");
-			if (otherShape.GetAttachedOWRigidbody().CompareTag("Player"))
-			{
-				Instance.ModHelper.Console.WriteLine("kill");
-				Locator.GetDeathManager().KillPlayer(DeathType.Impact);
-			}
-		};
+		var hazard = shape.gameObject.AddComponent<HazardVolume>();
+		hazard._damagePerSecond = 0;
+		hazard._firstContactDamage = 100;
+		hazard._firstContactDamageType = InstantDamageType.Impact;
 	}
 }
